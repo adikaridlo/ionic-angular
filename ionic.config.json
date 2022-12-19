@@ -1,0 +1,7 @@
+{
+  "name": "projek-belajar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
