@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
+import { InfiniteScrollCustomEvent, IonInfiniteScroll, LoadingController } from '@ionic/angular';
 import { MovieService } from 'src/app/services/movie.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-movies',
@@ -10,6 +11,7 @@ import { MovieService } from 'src/app/services/movie.service';
 export class MoviesPage implements OnInit {
    movies: any[] = [];
   currentPage = 1;
+  imageBaseUrl = environment.images;
 
   constructor(private movieService: MovieService, private loadingCtrl: LoadingController) { }
 
@@ -30,6 +32,10 @@ export class MoviesPage implements OnInit {
       this.movies = [...this.movies,...res.results];
       console.log(res.results);
     });
+  }
+
+  loadInboxList(event: InfiniteScrollCustomEvent){
+
   }
 
 }
