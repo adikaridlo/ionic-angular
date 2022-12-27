@@ -19,7 +19,7 @@ export class MoviesPage implements OnInit {
     this.loadMovies();
   }
 
-  async loadMovies() {
+  async loadMovies(event?: InfiniteScrollCustomEvent) {
     const loading = await this.loadingCtrl.create({
       message: 'Loading...',
       spinner: 'bubbles'
@@ -29,13 +29,17 @@ export class MoviesPage implements OnInit {
     this.movieService.getTopRateMovies(this.currentPage).subscribe((res) => {
       loading.dismiss();
       
-      this.movies = [...this.movies,...res.results];
+      // this.movies = [...this.movies,...res.results];
+      this.movies.push(...res.results)
       console.log(res.results);
+
+      event?.target.complete();
     });
   }
 
-  loadInboxList(event: InfiniteScrollCustomEvent){
-
+  loadMore(event: InfiniteScrollCustomEvent){
+    this.currentPage++;
+    this.loadMovies(event);
   }
 
 }
