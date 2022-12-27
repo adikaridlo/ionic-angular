@@ -34,6 +34,9 @@ export class MoviesPage implements OnInit {
       console.log(res.results);
 
       event?.target.complete();
+      if(event){
+        event.target.disabled = res.total_pages === this.currentPage;
+      }
     });
   }
 
