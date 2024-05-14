@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Daftar Web OPD Kabupaten Magetan" defaultHref="beranda">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card button *ngFor="let item of data_opd" [routerLink]="item.id_berita">
+  <ion-card-header>
+    <ion-card-title>{{item.judul}}</ion-card-title>
+    <ion-card-subtitle>{{update_date}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content class="ion-text-justify">
+    {{getFirst100Words(item.konten)}}
+  </ion-card-content>
+  <ion-button fill="clear" button [routerLink]="item.id_berita">Baca</ion-button>
+</ion-card>
+
+<ion-infinite-scroll (ionInfinite)="loadMore($event)">
+  <ion-infinite-scroll-content loading-spiner="bubbles" loading-text="Memuat berita..."></ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>

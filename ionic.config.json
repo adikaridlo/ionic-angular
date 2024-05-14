@@ -4,5 +4,9 @@
     "capacitor": {},
     "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "proxies": [{
+    "path": "/api",
+    "proxyUrl": "http://ppid.local/api"
+  }]
 }

@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'beranda',
     loadChildren: () => import('./pages/beranda/beranda.module').then( m => m.BerandaPageModule)
   },
+  {
+    path: 'images/img',
+    loadChildren: () => import('./images/images.module').then( m => m.ImagesPageModule)
+  },
+  {
+    path: 'opd',
+    loadChildren: () => import('./pages/web-opd/web-opd.module').then( m => m.WebOpdPageModule)
+  },
 ];
 
 @NgModule({

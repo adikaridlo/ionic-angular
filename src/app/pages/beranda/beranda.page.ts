@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-beranda',
   templateUrl: './beranda.page.html',
@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BerandaPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+  dataMovies(id:any){
+    // jika pakai id :
+    // this.router.navigate(['movies', id]);
 
+    // jika tidak pakai id :
+    this.router.navigate(['movies']);
+  }
   ngOnInit() {
   }
 

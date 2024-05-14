@@ -8,17 +8,27 @@
 <ion-grid>
   <ion-row>
     <ion-col size="12" size-sm>
-      <ion-card href="/movies">
-        <img src="/beranda/img/popcorn.png"/>
+      <ion-card (click) = "dataMovies(565770)">
+        <img src="./assets/icon/popcorn.png"/>
         <ion-card-header>
           <ion-card-title>
-            <div><ion-button expand="block" size="large" shape="round" fill="solid" color="tertiary">Daftar Filem</ion-button></div>
+            <div>
+              <!-- <ion-button expand="block" size="large" shape="round" fill="solid" color="tertiary">Daftar Filem</ion-button> -->
+              <ion-button expand="block" size="large" shape="round" fill="solid" color="tertiary" (click)="dataMovies(565770)">Daftar Filem</ion-button>
+            </div>
           </ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-col>
     <ion-col size="12" size-sm>
-      <div><ion-button expand="block" size="large" shape="round" fill="solid" color="warning">Daftar Makanan</ion-button></div>
+      <ion-card href="/opd">
+        <img src="./assets/icon/popcorn.png"/>
+        <ion-card-header>
+          <ion-card-title>
+            <div><ion-button expand="block" size="large" shape="round" fill="solid" color="warning">Daftar Makanan</ion-button></div>
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
     </ion-col>
   </ion-row>
 </ion-grid>
